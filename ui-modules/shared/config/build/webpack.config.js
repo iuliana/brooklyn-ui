@@ -34,7 +34,7 @@ const DEST_DIR = pj(ROOT_DIR, 'dist');
 const NODE_MODULES_DIR = pj(ROOT_DIR, 'node_modules');
 const UTILS_NODE_MODULES_DIR = pj(ROOT_DIR, '../utils/node_modules');
 const BRAND_FALLBACK_DIR = pj(ROOT_DIR, '../branding');
-const BRAND_DIR = (process.env.BROOKLYN_UI_BRAND_DIR && process.env.BROOKLYN_UI_BRAND_DIR!='default')
+const BRAND_DIR = (process.env.BROOKLYN_UI_BRAND_DIR && process.env.BROOKLYN_UI_BRAND_DIR!=='default')
     // default accepted because mvn needs to pass a value and empty isn't allowed
     ? path.isAbsolute(process.env.BROOKLYN_UI_BRAND_DIR) 
       ? process.env.BROOKLYN_UI_BRAND_DIR 

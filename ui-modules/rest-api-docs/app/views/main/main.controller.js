@@ -61,6 +61,5 @@ export function mainStateController($scope, $log, $cookies) {
         apisSorter: 'alpha',
         operationsSorters: 'alpha',
     });
-
     swaggerUi.load();
 }

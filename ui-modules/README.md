@@ -16,9 +16,9 @@ To run a local development server:
 make
 ```
 
-The server will be located at [http://0.0.0.0:8080](http://0.0.0.0:8080) and it will be proxy all API calls to Brooklyn Server 
-which you shuld run before on default for Brooklyn 8081 port. After that any chages detected in project file system will 
-automaticly refresh application via Webpack HMR (Hot Module Replacement) without hard reload page.
+The server will be located at [http://0.0.0.0:8080](http://0.0.0.0:8080) and it will be proxy all API calls to Brooklyn Server, 
+which you should run before on default for Brooklyn 8081 port. After that any changes detected in project file system will 
+automatically refresh application via Webpack HMR (Hot Module Replacement) without hard reload page.
 
 To build the production bundle, just run:
 
