@@ -42,6 +42,7 @@ module.exports = function (config) {
         autoWatch: !PRODUCTION_BUILD,
         singleRun: PRODUCTION_BUILD,
         reporters: ['progress'],
+        hostname: '127.0.0.1',
         browsers: ['PhantomJS'],
         plugins: [
             require('karma-webpack'),
