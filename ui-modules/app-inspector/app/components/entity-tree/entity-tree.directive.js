@@ -61,7 +61,8 @@ export function entityTreeDirective() {
         let observers = [];
 
         applicationApi.applicationsTree({
-            sensors: 'deployment.metadata'
+            //sensors: 'deployment.metadata'
+            depth: -1
         }).then((response)=> {
             vm.applications = response.data;
             analyzeRelationships(vm.applications);
