@@ -43,12 +43,12 @@ module.exports = function (config) {
         singleRun: PRODUCTION_BUILD,
         reporters: ['progress'],
         hostname: '127.0.0.1',
-        browsers: ['PhantomJS'],
+        browsers: ['ChromeHeadless'],
         plugins: [
             require('karma-webpack'),
             require('karma-sourcemap-loader'),
             'karma-jasmine',
-            'karma-phantomjs-launcher'
+            'karma-chrome-launcher'
         ],
         failOnEmptyTestSuite: false
     };
