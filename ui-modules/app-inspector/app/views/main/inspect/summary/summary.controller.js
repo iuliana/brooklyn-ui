@@ -66,9 +66,6 @@ export function summaryController($scope, $state, $stateParams, $q, $http, $http
                 lastEntityData = newData;
                 vm.entity = response.data;
                 vm.name = response.data.name;
-                console.log(">>>> Data is different!!");
-                console.log(">>>> Old data: ", vm.name, lastEntityData);
-                console.log(">>>> New data: ", vm.name,  newData)
                 iconService.get(response.data, true).then(value => vm.iconUrl = value);
             }
             vm.error.entity = undefined;
