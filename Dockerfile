@@ -47,8 +47,12 @@ RUN apt-get update && apt-get install -y \
     chromium \
  && rm -rf /var/lib/apt/lists/*
 
-# Use the distro Chromium for karma-chrome-launcher; stop puppeteer downloading its own x64-only build
-ENV CHROME_BIN=/usr/bin/chromium
+# Use the distro Chromium for karma-chrome-launcher; stop puppeteer downloading its own x64-only build.
+# Chromium's sandbox needs user namespaces, which containers (e.g. on Jenkins) don't allow, so karma
+# starts it through a wrapper that adds --no-sandbox.
+RUN printf '#!/bin/sh\nexec /usr/bin/chromium --no-sandbox "$@"\n' > /usr/local/bin/chromium-no-sandbox \
+ && chmod 755 /usr/local/bin/chromium-no-sandbox
+ENV CHROME_BIN=/usr/local/bin/chromium-no-sandbox
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
 # Make sure the /.config && /.yarn (for UI module builds) is writable for all users
